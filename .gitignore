@@ -1,0 +1,10 @@
+﻿*.mp4
+*.avi
+*.mkv
+*.mov
+*.pt
+*.onnx
+*.weights
+runs/
+dataset/
+videos/
