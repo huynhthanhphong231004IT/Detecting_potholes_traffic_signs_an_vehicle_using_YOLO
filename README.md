@@ -35,6 +35,15 @@ Youtobe: https://www.youtube.com/@ReoRioll-2304CICTCTU <br>
 </p>
 <br>
 
+## Kết quả kiểm thử trên video giao thông thực tế
+<p align="center">
+  <img src="Images/Predict_img/output_test_01.jpg" width="600">
+  <img src="Images/Predict_img/output_test_02.jpg" width="600">
+  <img src="Images/Predict_img/output_test_03.jpg" width="600">
+  <img src="Images/Predict_img/output_test_04.jpg" width="600">
+  <br>
+  <i>Đánh giá toàn diện hệ thống trên ảnh kiểm thử 01: Phát hiện đa vật thể, ước tính khoảng cách và nhận diện trạng thái đèn)</i>
+</p>
 
 ```python
 !git clone https://github.com/huynhthanhphong231004IT/Detecting_potholes_traffic_signs_an_vehicle_using_YOLO.git
@@ -99,18 +108,6 @@ if __name__ == "__main__":
 
     pygame.quit()
 ```
-
-## Kết quả kiểm thử trên video giao thông thực tế
-<p align="center">
-  <img src="Images/Predict_img/output_test_01.jpg" width="600">
-  <img src="Images/Predict_img/output_test_02.jpg" width="600">
-  <img src="Images/Predict_img/output_test_03.jpg" width="600">
-  <img src="Images/Predict_img/output_test_04.jpg" width="600">
-  <br>
-  <i>Đánh giá toàn diện hệ thống trên ảnh kiểm thử 01: Phát hiện đa vật thể, ước tính khoảng cách và nhận diện trạng thái đèn)</i>
-</p>
-
-
 
 ## Biểu thức tổng quan về quy trình xử lý và dựng khung hình của hệ thống
 
