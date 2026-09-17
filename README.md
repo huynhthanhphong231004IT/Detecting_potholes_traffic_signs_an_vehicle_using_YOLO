@@ -135,11 +135,11 @@ $$V \in \{15, 1.5, 154, 151, 1.54\} \text{ và } ('t' \in L \text{ hoặc xuất
 
 ### III. Bộ phân loại trạng thái và màu đèn giao thông dựa trên hệ quy tắc
 
-$$\text{TrafficLightColor}(I, \mathbf{b}) = \underset{c \in \{\text{Red}, \text{Yellow}, \text{Green}\}}{\operatorname{argmax}} \left( \sum_{(x,y) \in I_{\mathrm{crop}}} \mathbf{1}_{\text{Color}_c}(x,y) \right)$$
+$$\text{TrafficLightColor}(I, \mathbf{b}) = \arg\max_{c \in \{\text{Red}, \text{Yellow}, \text{Green}\}} \left( \sum_{(x,y) \in I_{\text{crop}}} \mathbf{1}_{\text{Color}_c}(x,y) \right)$$
 
 Với điều kiện ngưỡng kích hoạt điểm tối thiểu:
 
-$$\max_c \left( \sum_{(x,y) \in I_{\mathrm{crop}}} \mathbf{1}_{\text{Color}_c}(x,y) \right) \ge 0.008 \times (H_{\mathrm{crop}} \times W_{\mathrm{crop}})$$
+$$\max_c \left( \sum_{(x,y) \in I_{\text{crop}}} \mathbf{1}_{\text{Color}_c}(x,y) \right) \ge 0.008 \times (H_{\text{crop}} \times W_{\text{crop}})$$
 
 *(Nếu không thỏa mãn ngưỡng trên, trả về None)*
 
