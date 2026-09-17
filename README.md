@@ -16,8 +16,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <mark><b><b>Link Data:</b></b> </mark> https://www.kaggle.com/datasets/reorioll/autonomous-vehicle<br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<b>Timeline:</b> 09/2025 – 10/2026 at AI-IOT Department - Onyx United Foundation
 </p>
 <p align="center">
    <b>Presional link Information</b>
