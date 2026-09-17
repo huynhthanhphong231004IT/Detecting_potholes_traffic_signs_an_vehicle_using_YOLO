@@ -91,7 +91,7 @@ S_{\text{light}}^{(t-1)} & \text{nếu } 0 < C_{\text{missing}}^{(t)} < 10 \\
 </p>
 
 ```python
-!git clone 
+!git clone https://github.com/huynhthanhphong231004IT/Detecting_potholes_traffic_signs_an_vehicle_using_YOLO.git
 ```
 
 ```python
