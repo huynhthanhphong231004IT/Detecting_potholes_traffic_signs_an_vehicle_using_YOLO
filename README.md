@@ -34,6 +34,30 @@ Kaggle: https://www.kaggle.com/reorioll <br>
 Youtobe: https://www.youtube.com/@ReoRioll-2304CICTCTU <br>
 </p>
 <br>
+## Biểu thức tổng quan về quy trình xử lý và dựng khung hình của hệ thống
+
+> $$ \textcolor{red}{\mathbf{Frame}_{\text{out}}^{(t)} = \Psi_{\text{Render}} \Big( I^{(t)}, \; \mathcal{D}\left(I^{(t)}\right), \; d(H, h, f), \; \mathcal{C}_{\text{ocr}}^{(t)}\left(g_{\text{OCR}}\left(I_{\text{crop}}^{(t)}\right)\right), \; S_{\text{light}}^{(t)}\left(\text{TrafficLightColor}\left(I^{(t)}, \mathbf{b}^*\right)\right) \Big)} $$
+
+
+1. Điều kiện chạy OCR:
+
+$$\text{Activate AsyncOCR}\left(I_{\text{crop}}^{(t)}\right) \iff (c_i \in \text{SpeedSign}) \land (w_i > 30 \land h_i > 30) \land \left(\text{Key}(\mathbf{b}_i) \notin \mathcal{C}_{\text{ocr}}\right)$$
+
+2. Điều kiện chọn đèn giao thông chính:
+
+$$\mathbf{b}^* = \arg\max_{\mathbf{b}_i \in \text{TrafficLight}} (w_i \times h_i)$$
+
+3. Logic cập nhật trạng thái đèn theo thời gian ($S_{\text{light}}^{(t)}$):
+
+$$S_{\text{light}}^{(t)} = \begin{cases} 
+P^{(t)} & \text{nếu } C_{\text{pending}}^{(t)} \ge 4 \\ 
+S_{\text{light}}^{(t-1)} & \text{nếu } 0 < C_{\text{missing}}^{(t)} < 10 \\ 
+\emptyset & \text{nếu } C_{\text{missing}}^{(t)} \ge 10 
+\end{cases}$$
+
+\- Tăng đếm khớp mẫu: $C_{\text{pending}}^{(t)} = C_{\text{pending}}^{(t-1)} + 1 \quad \text{nếu } \text{TrafficLightColor} = P^{(t-1)}$
+
+\- Tăng đếm mất dấu: $C_{\text{missing}}^{(t)} = C_{\text{missing}}^{(t-1)} + 1 \quad \text{nếu } \text{TrafficLightColor} = \emptyset$
 
 ## Kết quả huấn luyện mô hình Yolo11n trên tập dữ liệu autonomous-vehicle
 <p align="center">
@@ -66,29 +90,6 @@ Youtobe: https://www.youtube.com/@ReoRioll-2304CICTCTU <br>
   <i>Compare train and val accuracy</i>
 </p>
 
-## Biểu thức tổng quan về quy trình xử lý và dựng khung hình của hệ thống
-> $$ \mathbf{\textcolor{red}{Frame}}_{\text{out}}^{(t)} = \Psi_{\text{\textcolor{red}{Render}}} \Big( I^{(t)}, \; \mathcal{D}\left(I^{(t)}\right), \; d(H, h, f), \; \mathcal{C}_{\text{\textcolor{red}{ocr}}}^{(t)}\left(g_{\text{\textcolor{red}{OCR}}}\left(I_{\text{crop}}^{(t)}\right)\right), \; S_{\text{\textcolor{red}{light}}}^{(t)}\left(\text{\textcolor{red}{TrafficLightColor}}\left(I^{(t)}, \mathbf{b}^*\right)\right) \Big) $$
-
-
-1. Điều kiện chạy OCR:
-
-$$\text{Activate AsyncOCR}\left(I_{\text{crop}}^{(t)}\right) \iff (c_i \in \text{SpeedSign}) \land (w_i > 30 \land h_i > 30) \land \left(\text{Key}(\mathbf{b}_i) \notin \mathcal{C}_{\text{ocr}}\right)$$
-
-2. Điều kiện chọn đèn giao thông chính:
-
-$$\mathbf{b}^* = \arg\max_{\mathbf{b}_i \in \text{TrafficLight}} (w_i \times h_i)$$
-
-3. Logic cập nhật trạng thái đèn theo thời gian ($S_{\text{light}}^{(t)}$):
-
-$$S_{\text{light}}^{(t)} = \begin{cases} 
-P^{(t)} & \text{nếu } C_{\text{pending}}^{(t)} \ge 4 \\ 
-S_{\text{light}}^{(t-1)} & \text{nếu } 0 < C_{\text{missing}}^{(t)} < 10 \\ 
-\emptyset & \text{nếu } C_{\text{missing}}^{(t)} \ge 10 
-\end{cases}$$
-
-\- Tăng đếm khớp mẫu: $C_{\text{pending}}^{(t)} = C_{\text{pending}}^{(t-1)} + 1 \quad \text{nếu } \text{TrafficLightColor} = P^{(t-1)}$
-
-\- Tăng đếm mất dấu: $C_{\text{missing}}^{(t)} = C_{\text{missing}}^{(t-1)} + 1 \quad \text{nếu } \text{TrafficLightColor} = \emptyset$
 
 ### I. Mô hình ước tính khoảng cách bằng camera đơn
 
