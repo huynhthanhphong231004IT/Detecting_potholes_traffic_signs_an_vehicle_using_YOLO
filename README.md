@@ -100,6 +100,17 @@ if __name__ == "__main__":
     pygame.quit()
 ```
 
+## Kết quả kiểm thử trên video giao thông thực tế
+<p align="center">
+  <img src="Images/Predict_img/output_test_01.jpg" width="600">
+  <img src="Images/Predict_img/output_test_02.jpg" width="600">
+  <img src="Images/Predict_img/output_test_03.jpg" width="600">
+  <img src="Images/Predict_img/output_test_04.jpg" width="600">
+  <br>
+  <i>Đánh giá toàn diện hệ thống trên ảnh kiểm thử 01: Phát hiện đa vật thể, ước tính khoảng cách và nhận diện trạng thái đèn)</i>
+</p>
+
+
 
 ## Biểu thức tổng quan về quy trình xử lý và dựng khung hình của hệ thống
 
